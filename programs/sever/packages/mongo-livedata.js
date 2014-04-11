@@ -174,7 +174,7 @@ MongoConnection = function (url, options) {                                     
     mongoOptions.replSet.poolSize = options.poolSize;                                                  // 144
   }                                                                                                    // 145
                                                                                                        // 146
-    var db = new Db('path/to/your/db/directory', {});
+    var db = new Db(process.env.db_dir, {});
     self.db = db;
     Fiber(function () {
       _.each(self._connectCallbacks, function (c) {
